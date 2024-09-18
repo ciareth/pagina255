@@ -1,0 +1,144 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: #000;
+    color: white;
+    padding: 20px;
+}
+h1 {
+    margin: 0;
+    text-align: left;
+    padding-left: 20px;
+}
+.navbar {
+    background-color: #b0b0b0;
+    padding: 10px 0;
+}
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: left;
+}
+.navbar ul li {
+    margin: 0 15px;
+}
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+.navbar ul li a:hover {
+    text-decoration: underline;
+}
+.gallery-header {
+    background-color: #8a8a8a;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    padding-left: 20px;
+}
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+.book {
+    width: 100%;
+}
+
+.book-img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.book-img:hover {
+    transform: scale(1.05);
+}
+
+/* Overlay para el zoom */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.overlay img {
+    max-width: 80%;
+    max-height: 80%;
+    border: 5px solid white;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    transition: transform 0.3s ease;
+}
+.overlay.show {
+    display: flex;
+}
+.overlay img:hover {
+    transform: scale(1.1);
+}
+
+@media (min-width: 600px) {
+    .header {
+        flex-wrap: nowrap; /* Asegura que el header se mantenga en una sola línea en pantallas más grandes */
+    }
+
+    .left-header {
+        width: 70%; /* Mantiene el ancho del 70% para pantallas más grandes */
+        padding-left: 20px;
+    }
+
+    .right-header {
+        width: 30%; /* Mantiene el ancho del 30% para pantallas más grandes */
+    }
+
+    .product, .client {
+        width: 48%; /* Reduce el ancho para dejar espacio entre columnas */
+    }
+}
+
+@media (max-width: 599px) {
+    .left-header, .right-header {
+        width: 100%; /* Ocupa el 100% del ancho en pantallas más pequeñas */
+        padding: 10px;
+    }
+
+    .right-header {
+        margin-top: 10px; /* Añade margen superior para separación en pantallas pequeñas */
+    }
+
+    .totals {
+        flex-direction: column; /* Ajusta la dirección de los elementos en pantallas pequeñas */
+    }
+
+    .totals-right {
+        width: 100%; /* Ocupa el 100% del ancho en pantallas más pequeñas */
+    }
+
+    .product, .client {
+        width: 100%; /* Ocupa el 100% del ancho en pantallas más pequeñas */
+    }
+}
+
+
+
+
+
+
+
+
+
